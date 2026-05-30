@@ -1,0 +1,6 @@
+verify.korona.lat {
+    reverse_proxy localhost:4253 {
+        header_up X-Forwarded-For {http.request.remote.host}
+        header_up X-Real-IP {http.request.remote.host}
+    }
+}
