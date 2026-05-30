@@ -1,3 +1,5 @@
+// beware this is TERRIBLY vibecoded cuz i dont wanna deal with vpn api bullshit cuz im lazy and dumb
+
 const { Client, GatewayIntentBits, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, PermissionFlagsBits, ActivityType } = require('discord.js');
 const express = require('express');
 const axios = require('axios');
