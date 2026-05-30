@@ -14,7 +14,8 @@ const config = {
     port:       parseInt(process.env.PORT) || 4253,
     vpnApiKey:  process.env.VPN_API_KEY,
     prefix:     process.env.PREFIX || 'v!',
-    ipHashSalt: process.env.IP_HASH_SALT
+    ipHashSalt: process.env.IP_HASH_SALT,
+    domain:     process.env.DOMAIN
 };
 
 // ─── IP Hashing ───────────────────────────────────────────────────────────────
@@ -468,7 +469,7 @@ client.on('interactionCreate', async (interaction) => {
         }
         // ─────────────────────────────────────────────────────────────────
 
-        const verifyUrl = `https://verify.korona.lat/verify/${interaction.user.id}/${interaction.guild.id}`;
+        const verifyUrl = `https://${config.domain}/verify/${interaction.user.id}/${interaction.guild.id}`;
         await interaction.reply({ content: `Click here to verify: ${verifyUrl}`, ephemeral: true });
     }
 });
